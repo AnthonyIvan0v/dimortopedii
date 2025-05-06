@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html class="page" lang="ua">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimortopedii</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/tailwind.css">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+    <script type="module" src="./scripts/app.js" defer></script>
+  </head>
+  <body class="page__body" x-data="{
+      mouseX: 0,
+      mouseY: 0,
+      isShowToUp: false,
+
+      isShowPageMenu: true,
+      isShowBurgerMenu: false,
+      isShowSearchMenu: false,
+      isShowPopUpContact: false,
+      isShowPopUpRepeat: false,
+      isShowPopUpDoctor: false,
+      isShowPopUpResult: false,
+      isShowPopUpContent: false,
+      isShowPopUpTHX: false,
+
+      currentHook: '',
+      contentType: '',
+      contentSrc: '',
+      isTablet: false,
+      isPhone: false,
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor || isShowPopUpResult || isShowSearchMenu}">
+    <div class="page__wrapper">
+      <div x-cloak x-show="isShowBurgerMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowBurgerMenu) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
+            <div class="screen" style="z-index: -1;">
+              <div class="screen__container">
+                <div class="_no-event screen-desk-↙">
+                  <div class="decor-blur-point" style="min-width: 400px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(185px);"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__header">
+              <h2 class="title-main  title-main--small title-main--first">
+                <div class="title-main__item">БЕЗПЕКА ТА ЗДОРОВ’Я ДИТИНИ — <i>НАШ ПРІОРИТЕТ</i></div>
+                <div class="title-main__item">
+                </div>
+              </h2>
+              <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
+            </div>
+            
+            <div class="burger-menu__main">
+              <div class="burger-menu__main__container-2">
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                padding-bottom: 30px;
+                gap: 20px;
+                border-bottom: 1px solid #62500f26;">
+                  <div>
+                    <h4 class="section-links__title">Компанія</h4>
+                    <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
+                    <div class="section-links__columns">
+                      <ul class="list-of-links">
+                        <li><a class="_link" href="./about_company.html">Про компанію</a></li>
+                        <li><a class="_link" href="./doctors.html">Лiкарi</a></li>
+                        <li><a class="_link" href="./license.html">Ліцензії</a></li>
+                        <li><a class="_link" href="./research.html">Дослiдження</a></li>
+                        <li><a class="_link" href="./cooperation.html">Спiвпраця</a></li>
+                        <li><a class="_link" href="./prices.html">Цiни</a></li>
+                        <li><a class="_link" href="./fqa.html">FQA</a></li>
+                        <li><a class="_link" href="./privacy_policy.html">Політика конфіденційності</a></li>
+                    
+                    </ul>
+                      <ul class="list-of-links">
+                        <li><a class="_link" href="./about_talee.html">Про шолом</a></li>
+                        <li><a class="_link" href="./about_piro.html">Ортези Piro</a></li>
+                        <li><a class="_link" href="./results.html">Результати лiкування</a></li>
+                        <li><a class="_link" href="./reviews.html">Відгуки</a></li>
+                        <li><a class="_link" href="./news.html">Новини</a></li>
+                        <li><a class="_link" href="./contacts.html">Контакти</a></li>
+                        <li><a class="_link" href="./video.html">Відео</a></li>                                
+                        <li><a class="_link" href="./offer_agreement.html">Договір оферти</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="margin-bottom: 25px">
+                      <div class="social-list"><a class="social-link" href="https://www.facebook.com/share/15aeKLn74A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="https://t.me/dimortopedii" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                      </div>
+                    </div>
+                    <button class="button" @click="isShowPopUpRepeat = true" type="">
+                      <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                      </p>
+                      <div class="button__icon">
+                        <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="burger-menu__container-2"><a href="./services.html">
+                    <h4 class="section-links__title">Послуги</h4></a>
+                  <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
+                  <div class="burger-menu__list-card">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-1_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Лiкування деформацiї голови</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-2_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Ортозування дiтей</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-3_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Консультації дитячого лiкаря ортопеда</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-4_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">реабiлiтацiя, Фізіотерапія та Масаж</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="burger-menu__footer__link-second _grid-col-max-2-2 _grid-col-phone-1-1"><a class="link link--negative" href="./services.html">
+                        <div class="link__text">УСІ ПОСЛУГИ</div>
+                        <div class="link__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                          </div>
+                        </div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__footer">
+              <div class="burger-menu__footer__author"><span style="
+            opacity: 0.35;
+          ">Дизайн та розробка: </span><a href="https://www.instagram.com/boris__kruglov/" target="_blank" style="
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(93, 89, 85, 0.3);
+          "> Борис Круглов</a></div>
+              <div class="burger-menu__footer__container">
+                <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
+                    <div class="link__text">УСІ ПОСЛУГИ</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowSearchMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowSearchMenu) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
+            <div class="screen" style="z-index: -1;">
+              <div class="screen__container">
+                <div class="_no-event screen-desk-↙">
+                  <div class="decor-blur-point" style="min-width: 400px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(185px);"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__header">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new input-new--search">
+                      <input class="input-new__input" type="text" name="my-search" placeholder="Що ви шукаєте?" title="Що ви шукаєте?"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
+            </div>
+            
+            <div class="burger-menu__main">
+              <div class="burger-menu__main__container-2 burger-menu__main__container-2--column">
+                
+                <div class="burger-menu__container-2">
+                  <h4 class="section-links__title">Результати Пошуку</h4>
+                  <div class="burger-menu__container-2__list"><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a>
+                  </div>
+                  <div style="margin-block: 10px;">
+                    <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                  </div>
+                  <div class="burger-menu__container-2__none">
+                    <div class="burger-menu__container-2__none__title">Результати пошуку за запитом «Запит» не знайдено</div>
+                    <ul class="burger-menu__container-2__none__list">
+                      <li>Переконайтеся, що всі слова написані правильно</li>
+                      <li>Спробуйте інший запиті</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="burger-menu__container-2"><a href="./services.html">
+                    <h4 class="section-links__title">Послуги</h4></a>
+                  <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
+                  <div class="burger-menu__list-card">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-1_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Лiкування деформацiї голови</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-2_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Ортозування дiтей</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-3_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">Консультації дитячого лiкаря ортопеда</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card-block-5--mini card" x-cloak="x-cloak">
+                          <img class="card-block-5__image" x-cloak="x-cloak" src="./images/icons/icon-v-4_kid.svg" loading="lazy"/>
+                          
+                          <div class="card-block-5__container" x-cloak="x-cloak">
+                            <h3 class="card-block-5__title" x-cloak="x-cloak">реабiлiтацiя, Фізіотерапія та Масаж</h3>
+                            <p class="card-block-5__text" x-cloak="x-cloak">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    <div class="burger-menu__footer__link-second _grid-col-max-2-2 _grid-col-phone-1-1"><a class="link link--negative" href="./services.html">
+                        <div class="link__text">УСІ ПОСЛУГИ</div>
+                        <div class="link__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                          </div>
+                        </div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__footer">
+              <div class="burger-menu__footer__author"><span style="
+            opacity: 0.35;
+          ">Дизайн та розробка: </span><a href="https://www.instagram.com/boris__kruglov/" target="_blank" style="
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(93, 89, 85, 0.3);
+          "> Борис Круглов</a></div>
+              <div class="burger-menu__footer__container">
+                <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
+                    <div class="link__text">УСІ ПОСЛУГИ</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpContact">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowPopUpContact) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
+            <div class="screen" style="z-index: -1;">
+              <div class="screen__container">
+                <div class="_no-event screen-desk-↙">
+                  <div class="decor-blur-point" style="min-width: 400px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(185px);"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__header">
+              <h2 class="title-main  title-main--small title-main--first">
+                <div class="title-main__item">Запишіться на консультацію <i>Просто зараз</i></div>
+                <div class="title-main__item">
+                </div>
+              </h2>
+              <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
+            </div>
+            
+            <div class="burger-menu__main">
+              <section class="section-form">
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center section-form__container"><img src="./images/icons/user-file.svg" alt="file"/>
+                      <h3 class="section-form__title">Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
+            console.log('Форма отправлена!');
+          }
+        }" @submit.prevent="handleSubmit">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+              <div class="burger-menu__main__container">
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="mailto:vduzhyk@gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>vduzhyk@gmail.com</span></a></div>
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                <div class="circle-block circle-block--mini">
+                  <div class="circle-block__wrapper">
+                    <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                    <div class="circle-block__container" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                    <div class="circle-block__container">
+                      <div style="width: 14px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shlem-head shlem-head--mini">
+                  <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                    <div class="shlem-head__face">
+                      <div class="shlem-head__eyes">
+                        <div class="eyes">
+                          <div class="eyes__wrapper">
+                            <div class="eyes__shadow"></div>
+                            <div class="eyes__eye">
+                              <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                <div class="eyes__pupil"></div>
+                              </div>
+                              <div class="eyes__blick-1"></div>
+                              <div class="eyes__blick-2"></div>
+                            </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
+                          </div>
+                          <div class="eyes__wrapper">
+                            <div class="eyes__shadow eyes__shadow--right"></div>
+                            <div class="eyes__eye">
+                              <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                <div class="eyes__pupil"></div>
+                              </div>
+                              <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                              <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                            </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
+                          </div>
+                        </div>
+                      </div><a class="shlem-head__nose" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                    </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
+                  </div>
+                </div>
+                <div class="burger-menu__main__list">
+                  <div class="social-list" style="place-self: end;"><a class="social-link" href="https://www.facebook.com/share/15aeKLn74A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__footer">
+              <div class="burger-menu__footer__author"><span style="
+            opacity: 0.35;
+          ">Дизайн та розробка: </span><a href="https://www.instagram.com/boris__kruglov/" target="_blank" style="
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(93, 89, 85, 0.3);
+          "> Борис Круглов</a></div>
+              <div class="burger-menu__footer__container">
+                <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
+                    <div class="link__text">УСІ ПОСЛУГИ</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpDoctor">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpDoctor) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+      'pop-up--center': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="card-info-doc" x-data="{
+      name: '',
+      info: '',
+      image: '',
+      alt: '',
+      experience: '',
+      specialization: '',
+      seniority: '',
+      personal: '',
+
+      facebook: false,
+      instagram: false,
+      youtube: false,
+      telegram: false,
+
+      updateDoctor(newData) {
+        Object.assign(this, newData);
+      }
+    }" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
+                  <article class="card-block-8 card" x-cloak="x-cloak">
+                    <img class="card-block-8__image" x-cloak="x-cloak" src="image" :src="image" loading="lazy" alt="alt"/>
+                    
+                    <div class="card-block-8__container" x-cloak="x-cloak">
+                      <h3 class="card-block-8__title" x-cloak="x-cloak" x-text="name">false</h3>
+                      <p class="card-block-8__text" x-cloak="x-cloak" x-text="info">false</p>
+                      <div class="card-block-8__block card__block">
+                        <div class="social-list" style="gap: 16px; justify-content: start;">
+                          <template x-if="facebook"><a class="social-link social-link--small" :href="facebook" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a>
+                          </template>
+                          <template x-if="instagram"><a class="social-link social-link--small" :href="instagram" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a>
+                          </template>
+                          <template x-if="youtube"><a class="social-link social-link--small" :href="youtube" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                          </template>
+                          <template x-if="telegram"><a class="social-link social-link--small" :href="telegram" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                  </article>
+                  <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                  <div class="card-info-doc__container">
+                    <div>
+                      <h3 class="card-info-doc__title">Досвід</h3>
+                      <p class="card-info-doc__text" x-text="experience"></p>
+                    </div>
+                    <div class="card-info-doc__line"></div>
+                    <div>
+                      <h3 class="card-info-doc__title">Спеціалізація</h3>
+                      <p class="card-info-doc__text" x-text="specialization"></p>
+                      <h3 class="card-info-doc__title">Стаж</h3>
+                      <p class="card-info-doc__text" x-text="seniority"></p>
+                      <h3 class="card-info-doc__title">Особисте</h3>
+                      <p class="card-info-doc__text" x-text="personal"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__footer">
+                  <button class="button" @click="isShowPopUpRepeat = true" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
+                    <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                    </p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpResult">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpResult) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+      'pop-up--center': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="card-result-info" x-data="{
+      title: '',
+      imageAfter: '',
+      dateAfter: '',
+      imageBefore: '',
+      dateBefore: '',
+      diagnose: '',
+      description: '',
+      age: '',
+
+      updateResult(newData) {
+        Object.assign(this, newData);
+      }
+    }" @notify.window="updateResult($event.detail);" x-cloak="x-cloak">
+                  <div class="card-result-info__grid">
+                    <div class="card-result-info__block">
+                      <div class="card-result-info__block__title">Вік дитини:</div>
+                      <div class="card-result-info__block__text" x-text="age"></div>
+                    </div>
+                    <div class="card-result-info__block">
+                      <div class="card-result-info__block__title">Результат:</div>
+                      <div class="card-result-info__block__text">Через <b x-text="title"></b></div>
+                    </div>
+                  </div>
+                  <div class="card-result-info__flex">
+                    <p>Діагноз</p>
+                    <p x-text="dateAfter"></p>
+                  </div>
+                  <div class="title-easy-2">
+                    <p class="title-easy-2__text"><span x-text="description"></span></p>
+                    <div class="title-easy-2__container">
+                      <h2 class="title-easy-2__main-text"><span x-text="diagnose"></span></h2>
+                    </div>
+                  </div>
+                  <div class="card-result-info__grid">
+                    <article class="card-block-9 card" x-cloak="x-cloak">
+                      <img class="card-block-9__image" x-cloak="x-cloak" src="imageAfter" :src="imageAfter" loading="lazy" alt="undefined"/>
+                      
+                      <div class="card-block-9__container" x-cloak="x-cloak">
+                        <h3 class="card-block-9__title" x-cloak="x-cloak">ДO ЛІКУВАННЯ</h3>
+                      </div>
+                      
+                      
+                    </article>
+                    <article class="card-block-9 card" x-cloak="x-cloak">
+                      <img class="card-block-9__image" x-cloak="x-cloak" src="imageBefore" :src="imageBefore" loading="lazy" alt="undefined"/>
+                      
+                      <div class="card-block-9__container" x-cloak="x-cloak">
+                        <h3 class="card-block-9__title" x-cloak="x-cloak"><b style="text-transform:uppercase">ЧЕРЕЗ <span x-text="title"></span></b></h3>
+                      </div>
+                      
+                      
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpRepeat">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpRepeat) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+      'pop-up--center': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="screen" style="z-index: -1;">
+                  <div class="screen__container">
+                    <div class="screen-desk-↘" style="transform: translate(40%, 40%)">
+                      <div class="decor-blur-point" style="min-width: 1200px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(220px);"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 class="pop-up-repeat__title">Запишіться на консультацію <br>Просто зараз</h3>
+                
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
+            console.log('Форма отправлена!');
+          }
+        }" @submit.prevent="handleSubmit">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <textarea class="textarea" name="my-message" cols="30" rows="5" placeholder="Ваше повідомлення"></textarea>
+                        </div>
+                      </div>
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                
+                <div class="pop-up-repeat__container">
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="mailto:vduzhyk@gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>vduzhyk@gmail.com</span></a></div>
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__wrapper">
+                      <div class="circle-block__container circle-block__container--center"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                    </div>
+                  </div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                  <div class="shlem-head shlem-head--mini">
+                    <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                      <div class="shlem-head__face">
+                        <div class="shlem-head__eyes">
+                          <div class="eyes">
+                            <div class="eyes__wrapper">
+                              <div class="eyes__shadow"></div>
+                              <div class="eyes__eye">
+                                <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                  <div class="eyes__pupil"></div>
+                                </div>
+                                <div class="eyes__blick-1"></div>
+                                <div class="eyes__blick-2"></div>
+                              </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
+                            </div>
+                            <div class="eyes__wrapper">
+                              <div class="eyes__shadow eyes__shadow--right"></div>
+                              <div class="eyes__eye">
+                                <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                  <div class="eyes__pupil"></div>
+                                </div>
+                                <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                                <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                              </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
+                            </div>
+                          </div>
+                        </div><a class="shlem-head__nose" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                      </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
+                    </div>
+                  </div>
+                  <div class="pop-up-repeat__list">
+                    <div class="social-list"><a class="social-link" href="https://www.facebook.com/share/15aeKLn74A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpContent">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpContent) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': true,
+      'pop-up--center': false,
+    }">
+          <div class="pop-up__button">
+            <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+          </div>
+          <div class="pop-up__content">
+            <section class="section-modal">
+              <div class="section-modal__container">
+                <div class="section-modal__bg"></div>
+                <div class="section-modal__screen" @click.stop=""><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
+                  <video class="section-modal__content" x-show="contentType==='video'" :src="contentSrc" autoplay="autoplay" controls="controls"></video>
+                  <iframe class="section-modal__content" x-show="contentType==='url'" width="100%" height="100%" :src="contentSrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpTHX">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': true,
+      'pop-up--center': true,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family"/>
+                  <div class="thx-block__content">
+                    <div class="title-easy-2">
+                      <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
+                      <div class="title-easy-2__container">
+                        <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="page__header">
+        <div class="header">
+          <div class="header__logo">
+            <div class="logo"><a href="main.html"><img src="./images/icons/logo.svg" alt="logo"/></a></div>
+          </div>
+          
+          
+          <div class="header__hr"></div>
+          
+          
+          <div class="_grid-col-max-3-3">
+            <div class="short-contacts__links">
+              <div class="short-contacts__link" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/location.svg"/><a href="#map-modal">м. Дніпро, вул. Троїцька, 21Г</a></div>
+              
+              <div class="short-contacts__link short-contacts__link--bigger"><img src="./images/icons/phone_.svg"/><a href="tel:tel:+38 095 120 75 75">+38 (095) 120 75 75</a></div>
+            </div>
+          </div>
+          
+          
+          <div class="header__container _grid-col-max-4-5">
+            <div class="header__navigation">
+              <nav class="navigation">
+                <ul class="navigation__list">
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="./about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="./services.html" @click="currentHook = '#services'">Усі послуги</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="./reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
+                </ul>
+              </nav>
+            </div>
+            
+            <div class="header__button-icons">
+              <button class="button-icon button-icon--no-bg" @click="isShowSearchMenu=true;" type=""><img src="./images/icons/search_.svg" alt="search"/></button><a class="button-icon" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></a>
+            </div>
+          </div>
+          
+          
+          <div class="header__buttons _grid-col-max-6-6">
+            <button class="button button--light" @click="isShowPopUpContact=true;" type="">
+              <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
+              </p>
+            </button>
+            
+            <button class="button-icon-service" @click="isShowBurgerMenu=true" type=""><img src="./images/icons/menu.svg" alt="menu"/></button>
+          </div>
+        </div>
+      </header>
+      <main class="page__main">
+        <div class="section-main-block">
+          <div class="section-main-block__title-container">
+            <div class="section-main-block__title-container__content-first">
+              <h1 class="section-main-block__title-container__content-first__title">Співпраця<br><b>МЦ «ДIМ ОРТОПЕДІЇ»</b></h1>
+              <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+              <p class="section-main-block__title-container__content-first__text">Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</p>
+            </div>
+            
+            <div class="section-main-block__title-container__content-second">
+              <h3 class="section-main-block__title-container__content-second__title-mini _grid-col-max-2-2 _grid-col-desk-2-2 _grid-col-lap-1-1">Співпраця з лікарями</h3>
+              <div class="section-main-block__title-container__content-second__video _grid-col-max-1-1 _grid-col-desk-1-1 _grid-col-lap-1-1">
+                <div class="video-link">
+                  <div class="video-link__view" @click="
+  isShowPopUpContent = true;
+  contentType = 'video';
+  contentSrc = './video/experience.mp4';
+">
+                    <div class="video-link__button"></div><img class="video-link__image" src="./images/decor/decor_4_.jpg" alt="video"/>
+                  </div>
+                </div>
+              </div>
+              <div class="section-main-block__title-container__content-second__card _grid-col-max-2-2 _grid-col-desk-2-2 _grid-col-lap-1-1">
+                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--height wrapper-frame--undefined">
+                  <div class="wrapper-frame__container">
+                    <article class="card-easy  card-easy--full card-easy--undefined card" x-cloak="x-cloak">
+                      
+                      
+                      <div class="card-easy__container" x-cloak="x-cloak"><img class="card-easy__image" src="./images/icons/profile-plus.svg" loading="lazy" alt="profile icon"/>
+                        <p class="card-easy__text" x-cloak="x-cloak">Запрошуємо до співпраці неонатологів, педіатрів, ортопедів, дитячих неврологів та нейрохірургів, мануальних та фізичних терапевтів, масажистів</p>
+                      </div>
+                      
+                      
+                      <div class="card-easy__block card__block"><a class="link" href="./cooperation.html">
+                          <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="section-main-block__title-container__content__breadcrumbs _grid-col-max-1-2">
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="breadcrumbs" style="margin: 24px;">
+                      <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="main.html">Головна</a>
+                        </li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__link" href="#"><span>Співпраця</span></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="section-main-block__content-container">
+            <div class="section-main-block__content-container__wrapper">
+              <div class="main-photo section-main-block__content-container__circle" style="width: 1056px; height: 1056px;">
+                <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                  <div class="main-photo__block">
+                    <div style="position: relative">
+                      <div class="section-main-block__content-container__photo"><img class="section-main-block__content-container__photo__image" src="./images/photos/doctors.jpg" alt="doctors"/></div>
+                      <div class="section-main-block__content-container__card-photo">
+                        <article class="card-block-4 card" x-cloak="x-cloak">
+                          
+                          
+                          <div class="card-block-4__container" x-cloak="x-cloak">
+                            <h3 class="card-block-4__title" x-cloak="x-cloak">Ми завжди готовi<br> допогти вам та<br> вашої дитини</h3>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="section-block">
+          <div class="section-block__title-container">
+            <div class="lable-main">01<span>/ Про компанiю</span></div>
+            <h2 class="title-main _anim-items _anim-once _transition-right">
+              <div class="title-main__item"> Ми надаємо <i>індивідуальні</i></div>
+              <div class="title-main__item"><span> та ефективні рішення в лiкуваннi деформації голови</span><span> використовуючи сучасні <b><strong>ортопедичні шоломи</strong></b></span>
+              </div>
+            </h2>
+          </div>
+          <div class="section-block__content-container">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_2">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">1й</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_25">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">!</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">3D</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">20000+</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Шоломом <span>Talee</span> було вилікувано <b>20 000+</b> дітей по всьому світу</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-block section-block--columns-1">
+          <div class="section-block__title-container">
+            <div class="lable-main lable-main--columns-1">02<span>/ Співпраця</span></div>
+            <h2 class="title-main title-main--columns-1 _anim-items _anim-once _transition-right">
+              <div class="title-main__item"> <b>кваліфікована команда</b></div>
+              <div class="title-main__item"><span> Запрошує до співпраці <i>майбутніх ріятівніків</i></span>
+              </div>
+            </h2>
+          </div>
+          <div class="section-block__content-container section-block__content-container--columns-1">
+            <div class="section-image-block__container-main">
+              <h3 class="section-image-block__title">Партнерам</h3>
+              <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
+                <div class="wrapper-frame__container">
+                  <div class="section-image-block">
+                    <div class="section-image-block__image-block">
+                      <div class="section-image-block__image-block__title">
+                        <div class="title-block-6">
+                          <p class="title-block-6__text">Долучайтесь до першопрохідців ортопедичних технологій в Україні – станьте частиною команди Ортофіт, де кожен крок веде до успіху</p>
+                          <div class="title-block-6__container">
+                            <h2 class="title-block-6__main-text">сильні партнерські відносини є ключем до інновацій та успіху</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-image-block__image-block__cards">
+                        <article class="card-block-2 card-block-2--mini-text card" x-cloak="x-cloak">
+                          <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_1-state.svg" loading="lazy"/>
+                          
+                          <div class="card-block-2__container" x-cloak="x-cloak">
+                            <p class="card-block-2__text" x-cloak="x-cloak">Єдиний в Україні медичний центр <br>з корекції деформації голови</p>
+                          </div>
+                          
+                          
+                        </article>
+                        <article class="card-block-2 card" x-cloak="x-cloak">
+                          <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_3-3d.svg" loading="lazy"/>
+                          
+                          <div class="card-block-2__container" x-cloak="x-cloak">
+                            <p class="card-block-2__text" x-cloak="x-cloak">Передовi <br>та 3D технологiї</p>
+                          </div>
+                          
+                          
+                        </article>
+                      </div>
+                    </div>
+                    
+                    <div class="section-image-block__container">
+                      <div class="section-image-block__container__title">
+                        <div class="title-block-5">
+                          <p class="title-block-5__text">Будь ласка, заповніть форму нижче, ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
+                          <div class="title-block-5__container">
+                            <h2 class="title-block-5__main-text">Залиште Ваші Контактні Дані</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-image-block__container__form">
+                        <form class="form" action="#" method="get" style="padding: 0;" x-data="{
+        handleSubmit() {
+          isShowPopUpTHX = true;
+          /* Ваша логика */
+          console.log('Форма отправлена!');
+        }
+      }" @submit.prevent="handleSubmit">
+                          <div class="wrapper-frame">
+                            <div class="wrapper-frame__container">
+                              <div class="wrapper-center">
+                                <label class="input-new">
+                                  <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wrapper-frame">
+                            <div class="wrapper-frame__container">
+                              <div class="wrapper-center">
+                                <label class="input-new">
+                                  <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <label class="checkbox">
+                            <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                          </label>
+                          <button class="button" @click="" type="submit">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="section-image-block__title">Актуальні вакансії</h3>
+              <div class="section-image-block__accordions">
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                  <div class="wrapper-frame__container">
+                    <div class="accordion" x-data="{isOpen:false}">
+                      <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист</span>
+                        <div class="accordion__icon">
+                          <div class="accordion__line"></div>
+                          <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </h2>
+                      <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
+                        <div class="block-vacancy">
+                          <div class="block-vacancy__header">
+                            <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                          </div>
+                          <div class="block-vacancy__main">
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Умови:</div>
+                              <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">Вимоги:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                            <div class="block-vacancy__main__container">
+                              <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                              <ul class="block-vacancy__main__container__list">
+                                <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                                <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                                <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                                <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-block section-block--light  section-block--columns-4 section-block--background-2" style="background-image: url(&quot;./images/decor/decor_7.jpg&quot;);">
+          <div class="section-block__title-container">
+            <div class="lable-main lable-main--light">03<span>/ Чому ми?</span></div>
+            <h2 class="title-main title-main--light _anim-items _anim-once _transition-right">
+              <div class="title-main__item"> <b>Eфективність лікування</b></div>
+              <div class="title-main__item"><span> ортопедичним шоломом TAlee підтверджена </span><span> численними науковими дослідженнями </span><span> та успішними випадками лікування</span>
+              </div>
+            </h2>
+          </div>
+          <div class="section-block__content-container section-block__content-container--light">
+            <article class="card-block-2 card-block-2--mini-text card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_2" x-cloak="x-cloak">
+              <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_1-state.svg" loading="lazy"/>
+              
+              <div class="card-block-2__container" x-cloak="x-cloak">
+                <p class="card-block-2__text" x-cloak="x-cloak">Єдиний в Україні медичний центр <br>з корекції деформації голови</p>
+              </div>
+              
+              
+            </article>
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_25" x-cloak="x-cloak">
+              <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_2-doctor.svg" loading="lazy"/>
+              
+              <div class="card-block-2__container" x-cloak="x-cloak">
+                <p class="card-block-2__text" x-cloak="x-cloak">Досвідчені <br>лікарі</p>
+              </div>
+              
+              
+            </article>
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5" x-cloak="x-cloak">
+              <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_3-3d.svg" loading="lazy"/>
+              
+              <div class="card-block-2__container" x-cloak="x-cloak">
+                <p class="card-block-2__text" x-cloak="x-cloak">Передовi <br>та 3D технологiї</p>
+              </div>
+              
+              
+            </article>
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5" x-cloak="x-cloak">
+              <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_4-health.svg" loading="lazy"/>
+              
+              <div class="card-block-2__container" x-cloak="x-cloak">
+                <p class="card-block-2__text" x-cloak="x-cloak">Кожен шолом <br>виготовляється індивідуало</p>
+              </div>
+              
+              
+            </article>
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-accordion">
+          <div class="section-accordion__container">
+            <div class="section-accordion__content">
+              <div class="section-accordion__lable">
+                <div class="lable-main">04<span>/ частi запитання</span></div>
+                <div class="wrapper-frame wrapper-frame--30">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <h3 class="section-accordion__lable__title">Я з радiстю вiдповiм на всi вашi запитання, та зможу вам допомогти</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="section-accordion__decor">
+                <div class="section-accordion__decor__point">
+                  <div class="decor-blur-point" style="min-width: 640px; min-height: 640px; border-radius: 100%; background: #F8D3BD; filter: blur(100px);"></div>
+                </div>
+                <div class="section-accordion__decor__block">
+                  <div class="section-accordion__decor__card">
+                    <article class="card-block-4 card" x-cloak="x-cloak">
+                      
+                      
+                      <div class="card-block-4__container" x-cloak="x-cloak">
+                        <h3 class="card-block-4__title" x-cloak="x-cloak">Дужик <br>Вiкторiя <br>Сергiївна</h3>
+                        <p class="card-block-4__text" x-cloak="x-cloak">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                      </div>
+                      
+                      
+                    </article>
+                  </div><img class="section-accordion__decor__image" src="./images/photos/woman_x2.png"/>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="section-accordion__list">
+              <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:true}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Як довго триває процес корекції деформації голови у дітей за допомогою ортопедичного шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Як часто потрібно приходити на консультації та контрольні візити під час лікування?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином визначається необхідність та тривалість використання ортопедичного шолому для конкретного випадку?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином ви враховуєте індивідуальні особливості дитини при розробці шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином ви враховуєте індивідуальні особливості дитини при розробці шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-block  section-block--columns-1">
+          <div class="section-block__title-container">
+            <div class="lable-main">05<span>/ Контакти</span></div>
+            <h2 class="title-main _anim-items _anim-once _transition-right">
+              <div class="title-main__item"> <i>Ми завжди вам раді</i> Та готовi</div>
+              <div class="title-main__item"><span> с радiстЮ <b>вам допомогти,</b> щоб покращити здоров’я вашої дитини</span>
+              </div>
+            </h2>
+          </div>
+          <div class="section-block__content-container">
+            <div class="section-contacts">
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="mailto:vduzhyk@gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>vduzhyk@gmail.com</span></a></div>
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+              <div class="shlem-head shlem-head--min">
+                <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                  <div class="shlem-head__face">
+                    <div class="shlem-head__eyes">
+                      <div class="eyes">
+                        <div class="eyes__wrapper">
+                          <div class="eyes__shadow"></div>
+                          <div class="eyes__eye">
+                            <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                              <div class="eyes__pupil"></div>
+                            </div>
+                            <div class="eyes__blick-1"></div>
+                            <div class="eyes__blick-2"></div>
+                          </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
+                        </div>
+                        <div class="eyes__wrapper">
+                          <div class="eyes__shadow eyes__shadow--right"></div>
+                          <div class="eyes__eye">
+                            <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                              <div class="eyes__pupil"></div>
+                            </div>
+                            <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                            <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                          </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
+                        </div>
+                      </div>
+                    </div><a class="shlem-head__nose" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                  </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
+                </div>
+              </div>
+              <div class="circle-block circle-block--min">
+                <div class="circle-block__wrapper">
+                  <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                  <div class="circle-block__container" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                  <div class="circle-block__container">
+                    <div style="width: 14px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-form">
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <div class="wrapper-center section-form__container"><img src="./images/icons/user-file.svg" alt="file"/>
+                <h3 class="section-form__title">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
+            console.log('Форма отправлена!');
+          }
+        }" @submit.prevent="handleSubmit">
+                <div class="form__container">
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <label class="input-new">
+                        <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <label class="checkbox">
+                  <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                </label>
+                <button class="button" @click="" type="submit">
+                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                  </p>
+                  <div class="button__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="page__menu">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp; !isShowSearchMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+          <div class="page__menu__container">
+            <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
+                    <div class="button-accordion-icon__menu">
+                      <div class="menu menu--list">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="menu__button">
+                              <button class="button-icon" @click="handleClose" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
+                            </div>
+                          </div>
+                          
+                          <div class="menu__content">
+                            <div class="menu-object">
+                              <div class="menu-object__header">
+                                <div class="menu-object__photo">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
+                                    <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                      <div class="main-photo__block">
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                          <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                        </div>
+                                        <div class="menu-object__item-1">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-2">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-3">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                        <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                          <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="menu-object__footer">
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>01</b>
+                                      <p>Шолом <b>Talee<sup>®</sup></b> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>02</b>
+                                      <p>Шолом <b>Talee<sup>®</sup></b>, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="menu__footer">
+                          <button class="button" @click="isShowPopUpRepeat = true" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="./about_talee.html">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/shlem-x1.png" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
+                    <div class="button-accordion-icon__menu">
+                      <div class="menu menu--blue menu--list">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ОРТЕЗИ PIRO</h2>
+                            <div class="menu__button">
+                              <button class="button-icon" @click="handleClose" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
+                            </div>
+                          </div>
+                          
+                          <div class="menu__content">
+                            <div class="menu-object menu-object--blue">
+                              <div class="menu-object__header">
+                                <div class="menu-object__photo">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
+                                    <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                      <div class="main-photo__block">
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                          <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                        </div>
+                                        <div class="menu-object__item-4">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-5">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-6">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                        <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                          <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="menu-object__footer">
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>01</b>
+                                      <p>Рухливість без oбтяжень. Для дітей із церебральним паралічем та подібними станами ортез на гомілковостопний суглоб є чудовим помічником у покращенні їхньої рухливості та контролю рухів. На жаль, більшість подібних ортезів важкі та громіздкі</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>02</b>
+                                      <p>Під час 3D моделювання ми виставляємо індивідуальні налаштування: положення стопи і гомілковостопного суглоба, фіксація п'яткової області, підйом супінатора, наявність або відсутність шарніра, рух гомілковостопного суглоба і багато іншого.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="menu__footer">
+                          <button class="button button--blue" @click="isShowPopUpRepeat = true" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="./about_piro.html">
+                            <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/foot-x1.png" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon button-accordion-icon--col" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="short-contacts__link" style="padding: 20px"><img src="./images/icons/phone.svg"/><a href="tel:tel:+38 095 120 75 75">+38 (095) 120 75 75</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="page__menu__container__contacts">
+              <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
+                <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="mailto:vduzhyk@gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com/share/15aeKLn74A/?mibextid=wwXIfr" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="viber://chat?number=+380951207575" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://t.me/dimortopedii" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
+                  </div>
+                </div>
+                <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
+                  <div class="contacts-menu__button__image"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <footer class="page__footer">
+        <div class="section-footer">
+          <div class="section-footer__links">
+            <div class="_grid-col-max-1-1 _grid-row-max-1-1 _grid-col-desk-1-1 _grid-row-desk-1-1 _grid-col-tab-1-1 _grid-row-tab-1-1">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <h3 class="section-footer__links__title">МЦ <span>«ДIМ ОРТОПЕДІЇ»</span> — Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="_grid-col-max-1-1 _grid-row-max-2-2 _grid-col-desk-1-1 _grid-row-desk-2-2 _grid-col-tab-1-1 _grid-row-tab-3-3">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+                <div class="wrapper-frame__container">
+                  <div class="section-footer__links__social wrapper-center">
+                    <p>Ми в соцiльних мережах</p>
+                    <div class="social-list"><a class="social-link" href="https://www.facebook.com/share/15aeKLn74A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com/dim_ortopedii?igsh=MjhvdzNhbG5zNTkz" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="_grid-col-max-2-2 _grid-row-max-1-2 _grid-col-desk-2-2 _grid-row-desk-1-2 _grid-col-tab-1-1 _grid-row-tab-2-2">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+                <div class="wrapper-frame__container">
+                  <div class="section-links">
+                    <div>
+                      <div>
+                        <h4 class="section-links__title">Компанія</h4>
+                        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
+                        <div class="section-links__columns">
+                          <ul class="list-of-links">
+                            <li><a class="_link" href="./about_company.html">Про компанію</a></li>
+                            <li><a class="_link" href="./doctors.html">Лiкарi</a></li>
+                            <li><a class="_link" href="./license.html">Ліцензії</a></li>
+                            <li><a class="_link" href="./research.html">Дослiдження</a></li>
+                            <li><a class="_link" href="./cooperation.html">Спiвпраця</a></li>
+                            <li><a class="_link" href="./prices.html">Цiни</a></li>
+                            <li><a class="_link" href="./fqa.html">FQA</a></li>
+
+                          </ul>
+                          <ul class="list-of-links">
+                            <li><a class="_link" href="./about_talee.html">Про шолом</a></li>
+                            <li><a class="_link" href="./about_piro.html">Ортези Piro</a></li>
+                            <li><a class="_link" href="./results.html">Результати лiкування</a></li>
+                            <li><a class="_link" href="./reviews.html">Відгуки</a></li>
+                            <li><a class="_link" href="./news.html">Новини</a></li>
+                            <li><a class="_link" href="./contacts.html">Контакти</a></li>
+                            <li><a class="_link" href="./video.html">Відео</a></li> 
+                          
+                        
+                        </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <h4 class="section-links__title">Послуги</h4>
+                        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
+                        <ul class="list-of-links">
+                          <li><a class="_link" href="./one_service.html">Лiкування деформацiї голови</a></li>
+                          <li><a class="_link" href="./one_service.html">Консультації дитячого лiкаря ортопеда</a></li>
+                          <li><a class="_link" href="./one_service.html">Ортозування дiтей</a></li>
+                          <li><a class="_link" href="./one_news.html">Фізіотерапія та масаж</a></li>
+                          <li><a class="_link" href="./one_news.html">Реабiлiтацiя</a></li>
+                          <li><a class="_link" href="./services.html">Усі послуги</a></li>
+                          <li><a class="_link" href="./offer_agreement.html">Договір оферти</a></li>                            
+                        
+                        
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section-footer__decor">
+            <div class="main-photo section-footer__main-photo" style="width: 1056px; height: 1056px;">
+              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                <div class="main-photo__block"><img class="section-footer__decor__logo" src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
+                </div>
+                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section-footer__footer">
+            <div class="card-footer">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <div><a class="card-footer__link" href="./privacy_policy.html">Політика конфіденційності</a>
+                      <p>© 2024-МЦ «ДIМ ОРТОПЕДІЇ», <br/>Усі права захищено</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <div class="card-footer__block">
+                      <p>Дизайн <br/>та розробка:</p><a href="https://www.instagram.com/boris__kruglov/" target="_blank"><img src="./images/icons/logo_kruglov.svg" alt="kruglov design"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
