@@ -26450,7 +26450,7 @@ a:active {
 .section-main-talee__title {
   position: absolute;
   bottom: 52px;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
 }
 .section-main-talee__title__wrapper {
